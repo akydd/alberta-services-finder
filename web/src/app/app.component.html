@@ -1,0 +1,121 @@
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="wordmark">Alberta<span>.ca</span></div>
+    <div class="masthead__title">Services Finder</div>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="hero">
+    <h1>Find a government service</h1>
+    <p>Search programs and services across the Government of Alberta.</p>
+
+    <div class="searchbar" (document:click)="showSuggestions.set(false)">
+      <div class="searchbar__field" (click)="$event.stopPropagation()">
+        <svg class="searchbar__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 21l-4.3-4.3M11 18a7 7 0 100-14 7 7 0 000 14z"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" />
+        </svg>
+        <input
+          type="text"
+          placeholder="Try “drivers licence”, “senior benefits”, “camping”…"
+          aria-label="Search for a service"
+          [value]="query()"
+          (input)="onInput($any($event.target).value)"
+          (focus)="query().trim() && showSuggestions.set(true)"
+        />
+        <ul class="suggestions" *ngIf="showSuggestions() && suggestions().length">
+          <li *ngFor="let s of suggestions()" (click)="pickSuggestion(s)">{{ s }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+    <!-- Facets -->
+    <aside class="facets" aria-label="Filters">
+      <div class="facets__head">
+        <h2>Filters</h2>
+        <button *ngIf="activeFilterCount() > 0" class="link" (click)="clearFilters()">
+          Clear all ({{ activeFilterCount() }})
+        </button>
+      </div>
+
+      <div class="facet" *ngFor="let group of facetGroups">
+        <ng-container *ngIf="facetBuckets(group.field).length">
+          <h3>{{ group.label }}</h3>
+          <label class="facet__option" *ngFor="let bucket of facetBuckets(group.field)">
+            <input
+              type="checkbox"
+              [checked]="isChecked(group.field, bucket.value)"
+              (change)="toggleFacet(group.field, bucket.value)"
+            />
+            <span class="facet__value">{{ bucket.value }}</span>
+            <span class="facet__count">{{ bucket.count }}</span>
+          </label>
+        </ng-container>
+      </div>
+    </aside>
+
+    <!-- Results -->
+    <section class="results" aria-live="polite">
+      <div class="results__bar">
+        <span *ngIf="results() as r">
+          <strong>{{ r.total }}</strong>
+          {{ r.total === 1 ? 'service' : 'services' }} found
+        </span>
+        <span class="spinner" *ngIf="loading()"></span>
+      </div>
+
+      <ng-container *ngIf="results() as r">
+        <div class="empty" *ngIf="r.total === 0">
+          <p>No services matched your search.</p>
+          <button class="link" (click)="clearFilters()" *ngIf="activeFilterCount() > 0">
+            Clear filters
+          </button>
+        </div>
+
+        <article class="card" *ngFor="let hit of r.hits">
+          <div class="card__head">
+            <h3 class="card__title">
+              <a [href]="hit.service.url" target="_blank" rel="noopener"
+                 [innerHTML]="titleHtml(hit)"></a>
+            </h3>
+            <span class="badge" [class.badge--free]="hit.service.cost === 'Free'">
+              {{ hit.service.cost }}
+            </span>
+          </div>
+
+          <p class="card__desc" [innerHTML]="descriptionHtml(hit)"></p>
+
+          <div class="card__meta">
+            <span class="chip chip--category">{{ hit.service.category }}</span>
+            <span class="chip">{{ hit.service.ministry }}</span>
+            <span class="chip chip--channel">{{ hit.service.deliveryChannel }}</span>
+          </div>
+
+          <div class="card__tags">
+            <span class="tag" *ngFor="let a of hit.service.audience">{{ a }}</span>
+          </div>
+        </article>
+
+        <!-- Pagination -->
+        <nav class="pager" *ngIf="r.total > 0 && totalPages() > 1" aria-label="Pagination">
+          <button (click)="goToPage(page() - 1)" [disabled]="page() === 0">‹ Prev</button>
+          <span>Page {{ page() + 1 }} of {{ totalPages() }}</span>
+          <button (click)="goToPage(page() + 1)" [disabled]="page() + 1 >= totalPages()">
+            Next ›
+          </button>
+        </nav>
+      </ng-container>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>
+    Demo project · Angular + Node/TypeScript + Elasticsearch ·
+    data is a curated sample of Government of Alberta services.
+  </p>
+</footer>

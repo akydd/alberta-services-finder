@@ -1,0 +1,65 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "filter": {
+        "service_synonyms": {
+          "type": "synonym_graph",
+          "synonyms": [
+            "id, identification, identity",
+            "licence, license, permit",
+            "senior, seniors, elderly, older adult",
+            "car, vehicle, automobile",
+            "doctor, physician, gp",
+            "job, employment, work, career",
+            "kid, kids, child, children",
+            "benefit, benefits, support, assistance, aid"
+          ]
+        },
+        "english_stemmer": {
+          "type": "stemmer",
+          "language": "english"
+        }
+      },
+      "analyzer": {
+        "service_text": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "asciifolding", "english_stemmer"]
+        },
+        "service_text_search": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "asciifolding", "service_synonyms", "english_stemmer"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "service_text",
+        "search_analyzer": "service_text_search",
+        "fields": {
+          "keyword": { "type": "keyword" },
+          "autocomplete": { "type": "search_as_you_type" }
+        }
+      },
+      "description": {
+        "type": "text",
+        "analyzer": "service_text",
+        "search_analyzer": "service_text_search"
+      },
+      "category": { "type": "keyword" },
+      "ministry": { "type": "keyword" },
+      "audience": { "type": "keyword" },
+      "tags": { "type": "keyword" },
+      "deliveryChannel": { "type": "keyword" },
+      "cost": { "type": "keyword" },
+      "url": { "type": "keyword", "index": false },
+      "updated": { "type": "date" }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# Single-node Elasticsearch for local development / demo.
+# Security is disabled on purpose so the demo runs with one command and no
+# credential setup. Do NOT use this configuration in production.
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    container_name: asf-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.license.self_generated.type=basic
+      # Keep the demo light on memory.
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      # Don't let a full dev disk block shard allocation for this demo.
+      - cluster.routing.allocation.disk.threshold_enabled=false
+    ports:
+      - "9200:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"\\(green\\|yellow\\)\"'"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  es-data:
