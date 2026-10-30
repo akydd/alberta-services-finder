@@ -11,8 +11,9 @@ jobs:
     name: API — seed + integration tests
     runs-on: ubuntu-latest
 
-    # Run Elasticsearch as a service container. The job waits for its health
-    # check to pass before any step runs.
+    # Run Elasticsearch as a service container. Readiness is handled by the
+    # "Wait for Elasticsearch" step below rather than a container health check:
+    # a piped curl|grep health-cmd does not survive Actions' options parsing.
     services:
       elasticsearch:
         image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
@@ -24,11 +25,6 @@ jobs:
           cluster.routing.allocation.disk.threshold_enabled: "false"
         ports:
           - 9200:9200
-        options: >-
-          --health-cmd "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"\\(green\\|yellow\\)\"'"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 20
 
     steps:
       - uses: actions/checkout@v4
