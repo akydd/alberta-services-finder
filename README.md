@@ -1,5 +1,7 @@
 # Alberta Services Finder
 
+[![CI](https://github.com/akydd/alberta-services-finder/actions/workflows/ci.yml/badge.svg)](https://github.com/akydd/alberta-services-finder/actions/workflows/ci.yml)
+
 A small full-stack search application that lets people find Government of Alberta
 programs and services. It's a focused demo of **Elasticsearch** relevance
 features behind an **Angular** single-page app and a **Node.js / TypeScript** API.
@@ -24,6 +26,7 @@ features behind an **Angular** single-page app and a **Node.js / TypeScript** AP
 | Pagination, input validation (zod), typed API contract | `api/src/routes/search.ts` |
 | **Integration tests** against a real Elasticsearch | `api/src/search.test.ts` |
 | One-command Elasticsearch via Docker | `docker-compose.yml` |
+| **CI** — Elasticsearch service, seed, tests, and Angular build on every push | `.github/workflows/ci.yml` |
 
 ## Architecture
 
@@ -105,15 +108,23 @@ Returns `{ status: "ok" }`.
     └── src/app/              # search UI (standalone components + signals)
 ```
 
-## Roadmap — Phase 2 (planned)
+## Roadmap
 
-- **Hybrid search**: dense vector (`dense_vector` + `knn`) combined with the
-  keyword query via Reciprocal Rank Fusion (`rrf`).
-- **AI "ask" feature**: a natural-language question box that runs retrieval over
-  the index and returns a grounded, source-cited answer (RAG), with guardrails.
+Ideas to deepen the search engineering, staying in this project's lane:
 
-See [AI-DEVELOPMENT.md](AI-DEVELOPMENT.md) for how this project uses AI-assisted
-development practices.
+- **Relevance tuning** — `function_score` to boost more recently updated
+  services; per-field analyzer refinements.
+- **"Did you mean?"** — spelling suggestions (term/phrase suggester) on
+  low-result queries.
+- **Insights view** — an aggregations dashboard (services by ministry, category,
+  cost) built from Elasticsearch aggregations.
+- **Live ingest** — a loader that pulls records from the
+  [Alberta open data portal](https://open.alberta.ca/) instead of the bundled
+  sample (the index mapping and API are source-agnostic).
+
+> This project is deliberately kept AI-feature-free so it can be a focused
+> Elasticsearch + Angular showcase. It was, however, **built with AI-assisted
+> development** — see [AI-DEVELOPMENT.md](AI-DEVELOPMENT.md).
 
 ## Data
 

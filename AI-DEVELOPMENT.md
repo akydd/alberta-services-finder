@@ -35,17 +35,9 @@ discipline I'd bring to a modern delivery team.
   (disabled Elasticsearch auth, disabled disk watermark) live only in
   `docker-compose.yml` and are explicitly marked demo-only, not production.
 
-## Phase 2: AI *features* (planned)
+## Scope note
 
-The next phase adds AI-powered functionality, which brings its own
-responsible-AI concerns to design for up front:
-
-- **Grounded answers only.** The planned natural-language "ask" feature will
-  retrieve from the indexed services and answer *from* that content, with
-  **cited sources**, rather than free-form generation — to reduce hallucination
-  risk.
-- **Graceful "I don't know".** When retrieval finds nothing relevant, the feature
-  should say so rather than invent an answer.
-- **Testing the AI path.** The retrieval/answer endpoint will have automated
-  tests covering retrieval quality and the no-answer case, consistent with
-  testing AI-enabled functionality for reliability.
+This project is intentionally **AI-feature-free** — it's a focused Elasticsearch
+and Angular search showcase. The "AI as a co-developer" story here is about *how
+it was built*, described above. (AI-powered product features are demonstrated in
+separate projects.)
