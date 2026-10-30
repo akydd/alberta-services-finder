@@ -4,8 +4,10 @@ A small full-stack search application that lets people find Government of Albert
 programs and services. It's a focused demo of **Elasticsearch** relevance
 features behind an **Angular** single-page app and a **Node.js / TypeScript** API.
 
-> Built as a portfolio project. The dataset is a curated sample of real Alberta
-> services; it is not an official government product.
+> **Portfolio / demo project.** The dataset is **synthetic sample data** written
+> to exercise the search features — it is **not** official Government of Alberta
+> data. Program names are realistic but ministry assignments, dates, and links
+> are illustrative and many URLs do not resolve. See [Data](#data) below.
 
 ---
 
@@ -112,6 +114,23 @@ Returns `{ status: "ok" }`.
 
 See [AI-DEVELOPMENT.md](AI-DEVELOPMENT.md) for how this project uses AI-assisted
 development practices.
+
+## Data
+
+`data/services.json` is a **synthetic, hand-authored sample** of ~39 Alberta
+government services, created to demonstrate the search features. It is not
+sourced from an official Government of Alberta dataset.
+
+- **Program names** are real and broadly accurate.
+- **Ministry names, audiences, and `updated` dates** are illustrative and may be
+  inaccurate or out of date (ministries are reorganized periodically).
+- **URLs** follow the `alberta.ca/<slug>` pattern but are **not verified**; a
+  link-check found that only 16 of 39 resolve. They are placeholders, not
+  authoritative references.
+
+To make the demo authoritative, replace this file with records exported from the
+[Alberta open data portal](https://open.alberta.ca/) (the index mapping and API
+are source-agnostic).
 
 ## Notes
 
