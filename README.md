@@ -6,8 +6,8 @@ features behind an **Angular** single-page app and a **Node.js / TypeScript** AP
 
 > **Portfolio / demo project.** The dataset is **synthetic sample data** written
 > to exercise the search features — it is **not** official Government of Alberta
-> data. Program names are realistic but ministry assignments, dates, and links
-> are illustrative and many URLs do not resolve. See [Data](#data) below.
+> data. Program names and links are real, but ministry assignments and dates are
+> illustrative. See [Data](#data) below.
 
 ---
 
@@ -122,11 +122,11 @@ government services, created to demonstrate the search features. It is not
 sourced from an official Government of Alberta dataset.
 
 - **Program names** are real and broadly accurate.
+- **URLs** are real and link-checked — all 39 resolve (verified). Most point to
+  the specific `alberta.ca` service page; a few point to the closest official
+  landing/topic page where no single dedicated page exists.
 - **Ministry names, audiences, and `updated` dates** are illustrative and may be
   inaccurate or out of date (ministries are reorganized periodically).
-- **URLs** follow the `alberta.ca/<slug>` pattern but are **not verified**; a
-  link-check found that only 16 of 39 resolve. They are placeholders, not
-  authoritative references.
 
 To make the demo authoritative, replace this file with records exported from the
 [Alberta open data portal](https://open.alberta.ca/) (the index mapping and API

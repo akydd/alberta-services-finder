@@ -22,7 +22,7 @@
     "tags": ["licence", "driving", "road test", "registry", "id"],
     "deliveryChannel": "In person",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/drivers-licences",
+    "url": "https://www.alberta.ca/get-drivers-licence",
     "updated": "2026-09-02"
   },
   {
@@ -100,7 +100,7 @@
     "tags": ["student loan", "grant", "scholarship", "post-secondary", "tuition"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/student-aid",
+    "url": "https://studentaid.alberta.ca/",
     "updated": "2026-09-05"
   },
   {
@@ -113,7 +113,7 @@
     "tags": ["birth", "certificate", "vital statistics", "id", "registry"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/birth-certificate",
+    "url": "https://www.alberta.ca/order-birth-certificate",
     "updated": "2026-06-11"
   },
   {
@@ -126,7 +126,7 @@
     "tags": ["marriage", "licence", "wedding", "registry", "vital statistics"],
     "deliveryChannel": "In person",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/marriage-licence",
+    "url": "https://www.alberta.ca/get-marriage-licence",
     "updated": "2026-05-28"
   },
   {
@@ -139,7 +139,7 @@
     "tags": ["business", "incorporation", "registration", "company", "name search"],
     "deliveryChannel": "In person",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/register-business",
+    "url": "https://www.alberta.ca/starting-business",
     "updated": "2026-07-03"
   },
   {
@@ -152,7 +152,7 @@
     "tags": ["small business", "funding", "grant", "startup", "advice"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/small-business",
+    "url": "https://www.alberta.ca/small-business-resources",
     "updated": "2026-08-22"
   },
   {
@@ -165,7 +165,7 @@
     "tags": ["job", "employment", "training", "career", "work"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/alberta-at-work",
+    "url": "https://www.alberta.ca/training-and-employment-services",
     "updated": "2026-09-27"
   },
   {
@@ -178,7 +178,7 @@
     "tags": ["apprenticeship", "trades", "certification", "training", "journeyperson"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/apprenticeship-training",
+    "url": "https://www.alberta.ca/become-apprentice-alberta",
     "updated": "2026-07-19"
   },
   {
@@ -191,7 +191,7 @@
     "tags": ["doctor", "physician", "family doctor", "clinic", "primary care"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/find-a-doctor",
+    "url": "https://www.alberta.ca/know-your-options",
     "updated": "2026-10-15"
   },
   {
@@ -204,7 +204,7 @@
     "tags": ["mental health", "crisis", "help line", "counselling", "support"],
     "deliveryChannel": "Phone",
     "cost": "Free",
-    "url": "https://www.alberta.ca/mental-health-services",
+    "url": "https://www.alberta.ca/get-help-and-support",
     "updated": "2026-09-12"
   },
   {
@@ -282,7 +282,7 @@
     "tags": ["camping", "parks", "reservation", "recreation", "outdoors"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/reserve-camping",
+    "url": "https://www.alberta.ca/parks-campgrounds",
     "updated": "2026-05-15"
   },
   {
@@ -295,7 +295,7 @@
     "tags": ["hunting", "fishing", "licence", "wildlife", "outdoors"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/hunting-fishing-licences",
+    "url": "https://www.alberta.ca/hunting-in-alberta",
     "updated": "2026-07-29"
   },
   {
@@ -321,7 +321,7 @@
     "tags": ["ticket", "fine", "traffic", "court", "payment"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/pay-fine",
+    "url": "https://www.alberta.ca/fine-payment",
     "updated": "2026-08-18"
   },
   {
@@ -334,7 +334,7 @@
     "tags": ["record check", "police", "background check", "employment", "volunteer"],
     "deliveryChannel": "In person",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/criminal-record-check",
+    "url": "https://eservices.alberta.ca/legal-matters",
     "updated": "2026-06-30"
   },
   {
@@ -373,7 +373,7 @@
     "tags": ["foster", "adoption", "children", "parenting", "caregiver"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/foster-adoption",
+    "url": "https://www.alberta.ca/child-guardianship-foster-care-kinship-care",
     "updated": "2026-08-03"
   },
   {
@@ -386,7 +386,7 @@
     "tags": ["prescription", "drug", "pharmacy", "coverage", "medication"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/drug-coverage",
+    "url": "https://www.alberta.ca/non-group-coverage",
     "updated": "2026-09-22"
   },
   {
@@ -412,7 +412,7 @@
     "tags": ["senior", "dental", "optical", "coverage", "benefit"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/coverage-for-seniors",
+    "url": "https://www.alberta.ca/dental-optical-assistance-seniors",
     "updated": "2026-08-27"
   },
   {
@@ -425,7 +425,7 @@
     "tags": ["school", "enrolment", "kindergarten", "children", "education"],
     "deliveryChannel": "In person",
     "cost": "Free",
-    "url": "https://www.alberta.ca/register-for-school",
+    "url": "https://www.alberta.ca/k-12-education",
     "updated": "2026-06-18"
   },
   {
@@ -438,7 +438,7 @@
     "tags": ["transcript", "diploma", "high school", "mypass", "records"],
     "deliveryChannel": "Online",
     "cost": "Paid",
-    "url": "https://www.alberta.ca/request-transcripts",
+    "url": "https://www.alberta.ca/student-information-high-school-transcripts",
     "updated": "2026-07-26"
   },
   {
@@ -451,7 +451,7 @@
     "tags": ["newcomer", "immigration", "settlement", "language", "integration"],
     "deliveryChannel": "In person",
     "cost": "Free",
-    "url": "https://www.alberta.ca/settlement-services",
+    "url": "https://www.alberta.ca/alberta-settlement-and-integration-program",
     "updated": "2026-09-16"
   },
   {
@@ -477,7 +477,7 @@
     "tags": ["disability", "parking", "placard", "accessible", "permit"],
     "deliveryChannel": "In person",
     "cost": "Free",
-    "url": "https://www.alberta.ca/disability-parking-placard",
+    "url": "https://www.alberta.ca/get-parking-placard-people-disabilities",
     "updated": "2026-05-21"
   },
   {
@@ -490,7 +490,7 @@
     "tags": ["farm", "fuel", "tax", "agriculture", "rebate"],
     "deliveryChannel": "Online",
     "cost": "Free",
-    "url": "https://www.alberta.ca/farm-fuel-benefit",
+    "url": "https://www.alberta.ca/farm-fuel-and-rural-utility-programs",
     "updated": "2026-04-22"
   },
   {
@@ -503,7 +503,7 @@
     "tags": ["water", "well", "testing", "safety", "rural"],
     "deliveryChannel": "In person",
     "cost": "Free",
-    "url": "https://www.alberta.ca/well-water-testing",
+    "url": "https://www.alberta.ca/farm-water-quality-testing",
     "updated": "2026-06-04"
   }
 ]
